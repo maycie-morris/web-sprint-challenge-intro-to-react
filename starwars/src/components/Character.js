@@ -8,33 +8,33 @@ import CharacterCard from './CharacterCard'
 
 function Character() {
 
-    const [character, setCharacter] = useState([]);
+    const [data, setData] = useState([]);
 
 
     useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character/").then((response) => {
-            setCharacter(response.data)
-        });
+        axios.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6")
+        .then((response) => {
+            console.log(response)
+            setData(response.data)
+        })
     }, []);
+
+    
 
 
     return (
         <div>
-            <ul>
-                {character.map((item) => {
-                    return (
-                        <CharacterCard
-                            id={item.id}
-                            img={item.image}
-                            name={item.name}
-                            status={item.status}
-                            species={item.species}
-                            gender={item.gender}
-                            origin={item.origin.name}
-                        />
-                    )
-                })}
-            </ul>
+         {data.map((item) => {
+             return <CharacterCard
+                key={item.id}
+                img={item.image}
+                name={item.name}
+                status={item.status}
+                species={item.species}
+                gender={item.gender}
+                origin={item.origin.name}
+            />
+        })}
         </div>
     )
 
