@@ -13,3 +13,5 @@ const CharacterCard = props => {
         </li>
     )
 }
+
+export default CharacterCard;

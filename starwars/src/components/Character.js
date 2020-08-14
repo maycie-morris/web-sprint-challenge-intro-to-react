@@ -16,5 +16,29 @@ function Character() {
             setCharacter(response.data)
         });
     }, []);
+
+
+    return (
+        <div>
+            <ul>
+                {character.map((item) => {
+                    return (
+                        <CharacterCard
+                            id={item.id}
+                            img={item.image}
+                            name={item.name}
+                            status={item.status}
+                            species={item.species}
+                            gender={item.gender}
+                            origin={item.origin.name}
+                        />
+                    )
+                })}
+            </ul>
+        </div>
+    )
+
 }
 
+
+export default Character;
