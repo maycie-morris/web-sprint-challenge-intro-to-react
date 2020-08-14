@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 
 const Header = styled.h2`
     font-size: 2.5rem;
@@ -7,11 +8,23 @@ const Header = styled.h2`
     text-shadow: 2px 2px 4px #000000;
     font-weight: bold;
     `
+    const rotate = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  `;
+  
 
 const Image = styled.img`
     border-radius: 50%;
     border: 3px solid black;
-    box-shadow: 0 10px 50px rgba(10, 42, 219, 1);`
+    box-shadow: 0 10px 50px rgba(10, 42, 219, 1);
+    animation: ${rotate} 15s linear infinite;`
+
 
 const Paragraphs = styled.p`
     text-transform: uppercase;
