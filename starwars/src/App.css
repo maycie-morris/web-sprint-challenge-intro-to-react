@@ -6,3 +6,23 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border: 5px solid white;
+  background: rgba(94, 140, 194, 0.356);
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rem;
+  text-align: center;
+}
